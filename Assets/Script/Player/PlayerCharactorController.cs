@@ -10,11 +10,14 @@ public class PlayerCharactorController : MonoBehaviour
     private float _xRotate = 0; // 플레이어 회전에 관한
 
     private RaycastHit _rayHit;
+
+    private IEnumerator zoomCoroutine;
     
     private void Start()
     {
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         playerInfo = GetComponent<PlayerInfo>();
+        zoomCoroutine = ZoomOut(); // 코루틴 초기화 / 카메라의 filed of view를 inspector에서 수정이 불가능하게 됨
     }
     
     void Update()
@@ -86,17 +89,34 @@ public class PlayerCharactorController : MonoBehaviour
         //field of view 30 - 60
         if (Input.GetMouseButton(playerInfo.rightClick))
         {
-            StartCoroutine(ZoomIn());
+
+            StopCoroutine(zoomCoroutine);
+            zoomCoroutine = ZoomIn();
+            StartCoroutine(zoomCoroutine);
         }
         else if (Input.GetMouseButtonUp(playerInfo.rightClick))
         {
-
+            zoomCoroutine = ZoomOut();
+            StartCoroutine(zoomCoroutine);
         }
     }
 
     IEnumerator ZoomIn()
     {
-        mainCamera.fieldOfView -= 0.1f;
-        yield return null;
+        if (mainCamera.fieldOfView > 30)
+        {
+            mainCamera.fieldOfView -= playerInfo.zoomingTime;
+            yield return null;
+        }
+    }
+
+    IEnumerator ZoomOut()
+    {
+        while (mainCamera.fieldOfView <= 60)
+        {
+            mainCamera.fieldOfView += playerInfo.zoomingTime;
+            yield return null;
+        }
+        mainCamera.fieldOfView = 60;
     }
 }
