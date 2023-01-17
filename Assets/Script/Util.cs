@@ -3,7 +3,6 @@ namespace MyUtil
 {
     public static class Util
     {
-        
         public static bool TrueFalseTranslater(bool boolean)
         {
             if (boolean)
@@ -14,4 +13,3 @@ namespace MyUtil
         }
     }
 }
-
