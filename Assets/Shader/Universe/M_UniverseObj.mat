@@ -93,6 +93,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
+    - _BlackNoiseScale: 30
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -103,10 +104,11 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _FresnelPower: 8.86
+    - _FresnelPower: 14
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _LightNoiseScale: 20
     - _Metallic: 0
     - _NoiseScale: 15
     - _NoiseScale_1: 20
@@ -127,7 +129,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _InnerColor: {r: 1, g: 0.8669812, b: 0.33490568, a: 0}
+    - _InnerColor: {r: 0.9245283, g: 0.79282665, b: 0.2660199, a: 0}
     - _OuterColor: {r: 4.9139104, g: 3.043339, b: 1.2284776, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
