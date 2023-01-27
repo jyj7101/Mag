@@ -41,7 +41,8 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -3919909694157835391}
   - {fileID: 7629390446289552872}
-  m_RendererFeatureMap: 81b31cd8e6ae99c9e805d94b300ae169
+  - {fileID: 3807013672993467972}
+  m_RendererFeatureMap: 81b31cd8e6ae99c9e805d94b300ae16944aed4e1c33ad534
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -81,6 +82,22 @@ MonoBehaviour:
   m_ClusteredRendering: 0
   m_TileSize: 32
   m_IntermediateTextureMode: 1
+--- !u!114 &3807013672993467972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466c7916ab969e94fb0cad84a6bfe2b4, type: 3}
+  m_Name: ReversalFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderPassEvent: 500
+    passMaterial: {fileID: 2100000, guid: cae1a546e8a4d2b46b6f615d7ad59d9a, type: 2}
 --- !u!114 &7629390446289552872
 MonoBehaviour:
   m_ObjectHideFlags: 0
