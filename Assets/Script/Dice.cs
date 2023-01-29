@@ -34,6 +34,7 @@ public class Dice : MonoBehaviour
 
     IEnumerator Prevention()
     {
+        meshRenderer.material.mainTexture = DiceTextures[6];
         while (colorN < 1)
         {
             meshRenderer.material.color = new Color(1, colorN, colorN, 1);
@@ -44,5 +45,4 @@ public class Dice : MonoBehaviour
         colorN = 0;
         meshRenderer.material.color = new Color(1, 1, 1, 1);
     }
-    
 }

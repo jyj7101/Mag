@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -13,17 +11,16 @@ public class PostProcesser : MonoBehaviour
     public float inChromaticTime;
     public float chromaticRunTime;
     public float outChromaticTime;
-
+    public float starChromaticAmount;
+    
     private Coroutine _coroutine;
     private IEnumerator a; 
     private void Start()
     {
         TryGetComponent<Volume>(out pope);
         pope.profile.TryGet(out chromatic);
-     
     }
-
-
+    
     private void Update()
     {
         // 이벤트로 받아올 것
@@ -34,10 +31,10 @@ public class PostProcesser : MonoBehaviour
             StartCoroutine(a);
         }
         
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            _coroutine = StartCoroutine(InChromatic());
-        }
+        // if (Input.GetKeyDown(KeyCode.E))
+        // {
+        //     _coroutine = StartCoroutine(InChromatic());
+        // }
         
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -46,12 +43,11 @@ public class PostProcesser : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.X))
             StopCoroutine(_coroutine);
-        
     }
 
     IEnumerator IntroChromatic()
     {
-        chromatic.active = true;
+        chromatic.active = true; 
         while (chromatic.intensity.value < 1)
         {
             chromatic.intensity.value += inChromaticTime * Time.deltaTime;
@@ -70,7 +66,7 @@ public class PostProcesser : MonoBehaviour
     IEnumerator OutChromatic()
     {
         chromatic.active = true;
-        chromatic.intensity.value = 1;
+        chromatic.intensity.value = starChromaticAmount;
         while (chromatic.intensity.value > 0)
         {
             chromatic.intensity.value -= outChromaticTime * Time.deltaTime;
@@ -81,7 +77,4 @@ public class PostProcesser : MonoBehaviour
         chromatic.active = false;
         chromatic.intensity.value = 0;
     }
-    
-    
-    
 }
