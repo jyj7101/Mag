@@ -30,6 +30,7 @@ public class Dice : MonoBehaviour
     {
         diceNum--;
         meshRenderer.material.mainTexture = DiceTextures[diceNum];
+        
     }
 
     IEnumerator Prevention()
