@@ -23,25 +23,25 @@ public class Fracture : MonoBehaviour
     /// </summary>
     private GameObject fragmentRoot;
 
-    [ContextMenu("Print Mesh Info")]
-    public void PrintMeshInfo()
-    {
-        var mesh = this.GetComponent<MeshFilter>().mesh;
-        Debug.Log("Positions");
-
-        var positions = mesh.vertices;
-        var normals = mesh.normals;
-        var uvs = mesh.uv;
-
-        for (int i = 0; i < positions.Length; i++)
-        {
-            Debug.Log($"Vertex {i}");
-            Debug.Log($"POS | X: {positions[i].x} Y: {positions[i].y} Z: {positions[i].z}");
-            Debug.Log($"NRM | X: {normals[i].x} Y: {normals[i].y} Z: {normals[i].z} LEN: {normals[i].magnitude}");
-            Debug.Log($"UV  | U: {uvs[i].x} V: {uvs[i].y}");
-            Debug.Log("");
-        }
-    }
+    // [ContextMenu("Print Mesh Info")]
+    // public void PrintMeshInfo()
+    // {
+    //     var mesh = this.GetComponent<MeshFilter>().mesh;
+    //     Debug.Log("Positions");
+    //
+    //     var positions = mesh.vertices;
+    //     var normals = mesh.normals;
+    //     var uvs = mesh.uv;
+    //
+    //     for (int i = 0; i < positions.Length; i++)
+    //     {
+    //         Debug.Log($"Vertex {i}");
+    //         Debug.Log($"POS | X: {positions[i].x} Y: {positions[i].y} Z: {positions[i].z}");
+    //         Debug.Log($"NRM | X: {normals[i].x} Y: {normals[i].y} Z: {normals[i].z} LEN: {normals[i].magnitude}");
+    //         Debug.Log($"UV  | U: {uvs[i].x} V: {uvs[i].y}");
+    //         Debug.Log("");
+    //     }
+    // }
 
     public void CauseFracture()
     {
@@ -49,71 +49,68 @@ public class Fracture : MonoBehaviour
         this.ComputeFracture();
     }
 
-    void OnValidate()
-    {
-        if (this.transform.parent != null)
-        {
-            // When an object is fractured, the fragments are created as children of that object's parent.
-            // Because of this, they inherit the parent transform. If the parent transform is not scaled
-            // the same in all axes, the fragments will not be rendered correctly.
-            var scale = this.transform.parent.localScale;
-            if ((scale.x != scale.y) || (scale.x != scale.z) || (scale.y != scale.z))
-            {
-                Debug.LogWarning($"Warning: Parent transform of fractured object must be uniformly scaled in all axes or fragments will not render correctly.", this.transform);
-            }
-        }
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (triggerOptions.triggerType == TriggerType.Collision)
-        {
-            if (collision.contactCount > 0)
-            {
-                // Collision force must exceed the minimum force (F = I / T)
-                var contact = collision.contacts[0];
-                float collisionForce = collision.impulse.magnitude / Time.fixedDeltaTime;
-
-                // Colliding object tag must be in the set of allowed collision tags if filtering by tag is enabled
-                bool tagAllowed = triggerOptions.IsTagAllowed(contact.otherCollider.gameObject.tag);
-
-                // Object is unfrozen if the colliding object has the correct tag (if tag filtering is enabled)
-                // and the collision force exceeds the minimum collision force.
-                if (collisionForce > triggerOptions.minimumCollisionForce &&
-                   (!triggerOptions.filterCollisionsByTag || tagAllowed))
-                {
-                    callbackOptions.CallOnFracture(contact.otherCollider, gameObject, contact.point);
-                    this.ComputeFracture();
-                }
-            }
-        }
-    }
-
-    void OnTriggerEnter(Collider collider)
-    {
-        if (triggerOptions.triggerType == TriggerType.Trigger)
-        {
-            // Colliding object tag must be in the set of allowed collision tags if filtering by tag is enabled
-            bool tagAllowed = triggerOptions.IsTagAllowed(collider.gameObject.tag);
-
-            if (!triggerOptions.filterCollisionsByTag || tagAllowed)
-            {
-                callbackOptions.CallOnFracture(collider, gameObject, transform.position);
-                this.ComputeFracture();
-            }
-        }
-    }
+    // void OnValidate()
+    // {
+    //     if (this.transform.parent != null)
+    //     {
+    //         // When an object is fractured, the fragments are created as children of that object's parent.
+    //         // Because of this, they inherit the parent transform. If the parent transform is not scaled
+    //         // the same in all axes, the fragments will not be rendered correctly.
+    //         var scale = this.transform.parent.localScale;
+    //         if ((scale.x != scale.y) || (scale.x != scale.z) || (scale.y != scale.z))
+    //         {
+    //             Debug.LogWarning($"Warning: Parent transform of fractured object must be uniformly scaled in all axes or fragments will not render correctly.", this.transform);
+    //         }
+    //     }
+    // }
+     // void OnCollisionEnter(Collision collision)
+     // {
+     //     if (triggerOptions.triggerType == TriggerType.Collision)
+     //     {
+     //         if (collision.contactCount > 0)
+     //         {
+     //             // Collision force must exceed the minimum force (F = I / T)
+     //             var contact = collision.contacts[0];
+     //             float collisionForce = collision.impulse.magnitude / Time.fixedDeltaTime;
+     //
+     //             // Colliding object tag must be in the set of allowed collision tags if filtering by tag is enabled
+     //             bool tagAllowed = triggerOptions.IsTagAllowed(contact.otherCollider.gameObject.tag);
+     //
+     //             // Object is unfrozen if the colliding object has the correct tag (if tag filtering is enabled)
+     //             // and the collision force exceeds the minimum collision force.
+     //             if (collisionForce > triggerOptions.minimumCollisionForce &&
+     //                (!triggerOptions.filterCollisionsByTag || tagAllowed))
+     //             {
+     //                 callbackOptions.CallOnFracture(contact.otherCollider, gameObject, contact.point);
+     //                 this.ComputeFracture();
+     //             }
+     //         }
+     //     }
+     // }
+    // void OnTriggerEnter(Collider collider)
+    // {
+    //     if (triggerOptions.triggerType == TriggerType.Trigger)
+    //     {
+    //         // Colliding object tag must be in the set of allowed collision tags if filtering by tag is enabled
+    //         bool tagAllowed = triggerOptions.IsTagAllowed(collider.gameObject.tag);
+    //
+    //         if (!triggerOptions.filterCollisionsByTag || tagAllowed)
+    //         {
+    //             callbackOptions.CallOnFracture(collider, gameObject, transform.position);
+    //             this.ComputeFracture();
+    //         }
+    //     }
+    // }
 
     void Update()
     {
-        if (triggerOptions.triggerType == TriggerType.Keyboard)
-        {
-            if (Input.GetKeyDown(triggerOptions.triggerKey))
+        
+            if (Input.GetKeyDown(KeyCode.O))
             {
                 callbackOptions.CallOnFracture(null, gameObject, transform.position);
                 this.ComputeFracture();
             }
-        }
+  
     }
 
     /// <summary>
@@ -207,7 +204,7 @@ public class Fracture : MonoBehaviour
         obj.name = "Fragment";
         obj.tag = this.tag;
         
-        obj.layer = this.gameObject.layer; // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< my layer 
+        obj.layer = this.gameObject.layer; // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 레이어 따라가게
         
         // Update mesh to the new sliced mesh
         obj.AddComponent<MeshFilter>();
@@ -233,7 +230,8 @@ public class Fracture : MonoBehaviour
         fragmentRigidBody.angularVelocity = thisRigidBody.angularVelocity;
         fragmentRigidBody.drag = thisRigidBody.drag;
         fragmentRigidBody.angularDrag = thisRigidBody.angularDrag;
-        fragmentRigidBody.useGravity = thisRigidBody.useGravity;
+        fragmentRigidBody.useGravity = true; // 중력 On <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ 
 
         // If refracturing is enabled, create a copy of this component and add it to the template fragment object
         if (refractureOptions.enableRefracturing &&
