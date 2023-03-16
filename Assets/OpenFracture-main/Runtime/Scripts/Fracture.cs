@@ -7,7 +7,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody))]
 public class Fracture : MonoBehaviour
 {
-    public TriggerOptions triggerOptions;
+    //public TriggerOptions triggerOptions;
     public FractureOptions fractureOptions;
     public RefractureOptions refractureOptions;
     public CallbackOptions callbackOptions;
@@ -251,7 +251,7 @@ public class Fracture : MonoBehaviour
     {
         var fractureComponent = obj.AddComponent<Fracture>();
 
-        fractureComponent.triggerOptions = this.triggerOptions;
+        //fractureComponent.triggerOptions = this.triggerOptions;
         fractureComponent.fractureOptions = this.fractureOptions;
         fractureComponent.refractureOptions = this.refractureOptions;
         fractureComponent.callbackOptions = this.callbackOptions;
