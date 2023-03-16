@@ -7,7 +7,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody))]
 public class Prefracture : MonoBehaviour
 {
-    public TriggerOptions triggerOptions;
+    //public TriggerOptions triggerOptions;
     public FractureOptions fractureOptions;
     public CallbackOptions callbackOptions;
     public PrefractureOptions prefractureOptions;
@@ -120,10 +120,10 @@ public class Prefracture : MonoBehaviour
         rigidBody.angularDrag = this.GetComponent<Rigidbody>().angularDrag;
         rigidBody.useGravity = this.GetComponent<Rigidbody>().useGravity;
 
-        var unfreeze = obj.AddComponent<UnfreezeFragment>();
-        unfreeze.unfreezeAll = prefractureOptions.unfreezeAll;
-        unfreeze.triggerOptions = this.triggerOptions;
-        unfreeze.onFractureCompleted = callbackOptions.onCompleted;
+        // var unfreeze = obj.AddComponent<UnfreezeFragment>();
+        // unfreeze.unfreezeAll = prefractureOptions.unfreezeAll;
+        // unfreeze.triggerOptions = this.triggerOptions;
+        // unfreeze.onFractureCompleted = callbackOptions.onCompleted;
         
         return obj;
     }

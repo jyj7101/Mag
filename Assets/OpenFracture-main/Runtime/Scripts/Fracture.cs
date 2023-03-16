@@ -9,7 +9,7 @@ public class Fracture : MonoBehaviour
 {
     //public TriggerOptions triggerOptions;
     public FractureOptions fractureOptions;
-    public RefractureOptions refractureOptions;
+    //public RefractureOptions refractureOptions;
     public CallbackOptions callbackOptions;
 
     /// <summary>
@@ -43,11 +43,11 @@ public class Fracture : MonoBehaviour
     //     }
     // }
 
-    public void CauseFracture()
-    {
-        callbackOptions.CallOnFracture(null, gameObject, transform.position);
-        this.ComputeFracture();
-    }
+    // public void CauseFracture()
+    // {
+    //     callbackOptions.CallOnFracture(null, gameObject, transform.position);
+    //     this.ComputeFracture();
+    // }
 
     // void OnValidate()
     // {
@@ -107,7 +107,7 @@ public class Fracture : MonoBehaviour
         
             if (Input.GetKeyDown(KeyCode.O))
             {
-                callbackOptions.CallOnFracture(null, gameObject, transform.position);
+                //callbackOptions.CallOnFracture(null, gameObject, transform.position);
                 this.ComputeFracture();
             }
   
@@ -127,7 +127,7 @@ public class Fracture : MonoBehaviour
             if (this.fragmentRoot == null)
             {
                 // Create a game object to contain the fragments
-                this.fragmentRoot = new GameObject($"{this.name}Fragments");
+                this.fragmentRoot = new GameObject($"{this.name}Fragments"); // 부술 오브젝트를 복사해서 새로 생성함
                 this.fragmentRoot.transform.SetParent(this.transform.parent);
 
                 // Each fragment will handle its own scale
@@ -138,56 +138,54 @@ public class Fracture : MonoBehaviour
 
             var fragmentTemplate = CreateFragmentTemplate();
 
-            if (fractureOptions.asynchronous)
-            {
-                StartCoroutine(Fragmenter.FractureAsync(
-                    this.gameObject,
-                    this.fractureOptions,
-                    fragmentTemplate,
-                    this.fragmentRoot.transform,
-                    () =>
-                    {
-                        // Done with template, destroy it
-                        GameObject.Destroy(fragmentTemplate);
-
-                        // Deactivate the original object
-                        this.gameObject.SetActive(false);
-
-                        // Fire the completion callback
-                        if ((this.currentRefractureCount == 0) ||
-                            (this.currentRefractureCount > 0 && this.refractureOptions.invokeCallbacks))
-                        {
-                            if (callbackOptions.onCompleted != null)
-                            {
-                                callbackOptions.onCompleted.Invoke();
-                            }
-                        }
-                    }
-                ));
-            }
-            else
-            {
-                Fragmenter.Fracture(this.gameObject,
-                                    this.fractureOptions,
-                                    fragmentTemplate,
-                                    this.fragmentRoot.transform);
-
-                // Done with template, destroy it
-                GameObject.Destroy(fragmentTemplate);
-
-                // Deactivate the original object
-                this.gameObject.SetActive(false);
-
-                // Fire the completion callback
-                if ((this.currentRefractureCount == 0) ||
-                    (this.currentRefractureCount > 0 && this.refractureOptions.invokeCallbacks))
-                {
-                    if (callbackOptions.onCompleted != null)
-                    {
+             if (fractureOptions.asynchronous)
+             {
+                 StartCoroutine(Fragmenter.FractureAsync(
+                     this.gameObject,
+                     this.fractureOptions,
+                     fragmentTemplate,
+                     this.fragmentRoot.transform,
+                     () =>
+                     {
+                         // Done with template, destroy it
+                         GameObject.Destroy(fragmentTemplate);
+            
+                         // Deactivate the original object
+                         this.gameObject.SetActive(false);
+            
+                         // Fire the completion callback < 완료 콜백 함수 실행
+                         if (this.currentRefractureCount == 0) 
+                         {
+                             if (callbackOptions.onCompleted != null)
+                             {
+                                 callbackOptions.onCompleted.Invoke();
+                             }
+                         }
+                     }
+                 ));
+             }
+             else
+             {
+                 Fragmenter.Fracture(this.gameObject,
+                                     this.fractureOptions,
+                                     fragmentTemplate,
+                                     this.fragmentRoot.transform);
+            
+                 // Done with template, destroy it
+                 GameObject.Destroy(fragmentTemplate);
+            
+                 // Deactivate the original object
+                 this.gameObject.SetActive(false);
+            
+                 // Fire the completion callback
+                 if (this.currentRefractureCount == 0)
+                 {
+                     if (callbackOptions.onCompleted != null)
+                     {
                         callbackOptions.onCompleted.Invoke();
-                    }
-                }
-            }
+                     }
+                 }
+             }
         }
     }
 
@@ -203,12 +201,13 @@ public class Fracture : MonoBehaviour
         GameObject obj = new GameObject();
         obj.name = "Fragment";
         obj.tag = this.tag;
-        
         obj.layer = this.gameObject.layer; // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 레이어 따라가게
         
         // Update mesh to the new sliced mesh
-        obj.AddComponent<MeshFilter>();
-
+        obj.AddComponent<MeshFilter>(); 
+        // 추가하고싶은 스크립트 추가
+        // random한 방향으로 힘을 주는 스크립트 추가해주면 날라가게 가능할 듯
+        obj.AddComponent<RandomAddForce>();
         // Add materials. Normal material goes in slot 1, cut material in slot 2
         var meshRenderer = obj.AddComponent<MeshRenderer>();
         meshRenderer.sharedMaterials = new Material[2] {
@@ -234,11 +233,12 @@ public class Fracture : MonoBehaviour
  
 
         // If refracturing is enabled, create a copy of this component and add it to the template fragment object
-        if (refractureOptions.enableRefracturing &&
-           (this.currentRefractureCount < refractureOptions.maxRefractureCount))
-        {
-            CopyFractureComponent(obj);
-        }
+        // 재골절(re - fracturing) 이 끝나면 컴포넌트 카피해서 넣어줌
+        // if (refractureOptions.enableRefracturing &&
+        //    (this.currentRefractureCount < refractureOptions.maxRefractureCount))
+        // {
+        //     CopyFractureComponent(obj);
+        // }
 
         return obj;
     }
@@ -253,7 +253,7 @@ public class Fracture : MonoBehaviour
 
         //fractureComponent.triggerOptions = this.triggerOptions;
         fractureComponent.fractureOptions = this.fractureOptions;
-        fractureComponent.refractureOptions = this.refractureOptions;
+        //fractureComponent.refractureOptions = this.refractureOptions;
         fractureComponent.callbackOptions = this.callbackOptions;
         fractureComponent.currentRefractureCount = this.currentRefractureCount + 1;
         fractureComponent.fragmentRoot = this.fragmentRoot;

@@ -2463,8 +2463,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 1
   m_AngularDrag: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
@@ -2477,7 +2477,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2053021843}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -2585,6 +2585,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8099476694984830853, guid: 15964ba3645d1914a86344d811047601,
+        type: 3}
+      propertyPath: fractureOptions.xAxis
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099476694984830853, guid: 15964ba3645d1914a86344d811047601,
+        type: 3}
+      propertyPath: fractureOptions.yAxis
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099476694984830853, guid: 15964ba3645d1914a86344d811047601,
+        type: 3}
+      propertyPath: fractureOptions.zAxis
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099476694984830853, guid: 15964ba3645d1914a86344d811047601,
+        type: 3}
+      propertyPath: fractureOptions.fragmentCount
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099476694984830853, guid: 15964ba3645d1914a86344d811047601,
+        type: 3}
+      propertyPath: refractureOptions.invokeCallbacks
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099476694984830853, guid: 15964ba3645d1914a86344d811047601,
+        type: 3}
+      propertyPath: refractureOptions.enableRefracturing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099476694984830853, guid: 15964ba3645d1914a86344d811047601,
+        type: 3}
+      propertyPath: refractureOptions.maxRefractureCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099476694984830853, guid: 15964ba3645d1914a86344d811047601,
+        type: 3}
+      propertyPath: fractureOptions.detectFloatingFragments
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8099476694984830855, guid: 15964ba3645d1914a86344d811047601,
         type: 3}
       propertyPath: m_RootOrder
@@ -2593,17 +2633,17 @@ PrefabInstance:
     - target: {fileID: 8099476694984830855, guid: 15964ba3645d1914a86344d811047601,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.119
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8099476694984830855, guid: 15964ba3645d1914a86344d811047601,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.544
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8099476694984830855, guid: 15964ba3645d1914a86344d811047601,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.536
+      value: 6.31
       objectReference: {fileID: 0}
     - target: {fileID: 8099476694984830855, guid: 15964ba3645d1914a86344d811047601,
         type: 3}
