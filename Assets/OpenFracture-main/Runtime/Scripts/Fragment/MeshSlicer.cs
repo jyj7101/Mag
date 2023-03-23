@@ -55,12 +55,20 @@ public static class MeshSlicer
         // The slice normal points to the "above" mesh, so the face normal for the cut face
         // on the above mesh is opposite of the slice normal. Conversely, normal for the
         // cut face on the "below" mesh is in the direction of the slice normal
+        
+        // 각 메시의 절단면을 채웁니다.
+        // 슬라이스 법선은 "위" 메시를 가리키므로 절단면에 대한 면 법선
+        // 위 메쉬에서 슬라이스 법선의 반대입니다. 반대로 정상인에게는
+        // "아래" 메시의 절단면은 슬라이스 법선 방향입니다.
         FillCutFaces(topSlice, bottomSlice, -sliceNormal, textureScale, textureOffset);
     }
 
     /// <summary>
     /// Fills the cut faces for each sliced mesh. The `sliceNormal` is the normal for the plane and points
     /// in the direction of `topMeshData`
+    ///
+    ///  각 슬라이스 메시의 절단면을 채웁니다. 'sliceNormal'은 평면과 점의 법선입니다.
+    /// `topMeshData` 방향으로
     /// </summary>
     /// <param name="topSlice">Fragment mesh data for slice above the slice plane</param>
     /// <param name="bottomSlice">Fragment mesh data for slice above the slice plane</param>
@@ -76,11 +84,17 @@ public static class MeshSlicer
         // Since the topSlice and bottomSlice both share the same cut face, we only need to calculate it
         // once. Then the same vertex/triangle data for the face will be used for both slices, except
         // with the normals reversed.
+        
+        // topSlice와 bottomSlice는 모두 동일한 절단면을 공유하므로 이를 계산하기만 하면 됩니다.
+        // 한 번. 그런 다음 얼굴에 대한 동일한 꼭지점/삼각형 데이터가 두 슬라이스에 사용됩니다.
+        // 법선이 반전됩니다.
 
         // First need to weld the coincident vertices for the triangulation to work properly
+        // 삼각 분할이 제대로 작동하려면 먼저 일치하는 꼭지점을 용접해야 합니다.
         topSlice.WeldCutFaceVertices();
 
         // Need at least 3 vertices to triangulate
+        // 삼각 측량을 위해서는 최소 3개의 정점이 필요합니다.
         if (topSlice.CutVertices.Count < 3) return;
 
         // Triangulate the cut face
@@ -96,6 +110,10 @@ public static class MeshSlicer
             // UV coordinates are based off of the 2D coordinates used for triangulation
             // During triangulation, coordinates are normalized to [0,1], so need to multiply
             // by normalization scale factor to get back to the appropritate scale
+            
+            // UV 좌표는 삼각 측량에 사용되는 2D 좌표를 기반으로 합니다.
+            // 삼각 측량 시 좌표는 [0,1]로 정규화되므로 곱셈이 필요합니다.
+            // 적절한 스케일로 돌아가기 위해 정규화 스케일 팩터에 의해
             Vector2 uv = new Vector2(
                 (triangulator.normalizationScaleFactor * point.coords.x) * textureScale.x + textureOffset.x,
                 (triangulator.normalizationScaleFactor * point.coords.y) * textureScale.y + textureOffset.y);
