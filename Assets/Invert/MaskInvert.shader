@@ -3,7 +3,8 @@ Shader "Custom/MaskInvert"
     Properties
     {
         _MainTex("Texture", 2D) = "white" {}
-        _MaskTex("Mask texture", 2D) = "white" {}
+        //_MaskTex("Mask texture", 2D) = "white" {}
+        _GrayScale("Grayscale", Range(0.0, 0.75)) = 0.0
     }
         SubShader
     {
@@ -18,6 +19,7 @@ Shader "Custom/MaskInvert"
 
             #include "UnityCG.cginc"
 
+            float _GrayScale;
             struct appdata
             {
                 float4 vertex : POSITION;
@@ -44,8 +46,12 @@ Shader "Custom/MaskInvert"
             fixed4 frag(v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                fixed4 mask = tex2D(_MaskTex, i.uv);
-                col = (1 - col) * mask + col * (1 - mask);
+                float gray = (col.r + col.g + col.b) / 3;
+                
+                // fixed4 mask = tex2D(_MaskTex, i.uv);
+                // col = (1 - col) * mask + col * (1 - mask); reverse
+                
+                col = lerp(col, gray, _GrayScale);
                 return col;
             }
             ENDCG
