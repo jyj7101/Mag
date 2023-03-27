@@ -8,13 +8,13 @@ public class ReversalFeature : ScriptableRendererFeature
 {
 
     [System.Serializable]
-    public class ReversalSettings  // 내가 사용할 쉐이더 세팅
+    public class ReversalSettings  // 쉐이더 세팅
     {
         public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
         public Material passMaterial = null;
     }
 
-    public ReversalSettings settings = new ReversalSettings(); // 세팅 클래스 생성
+    public ReversalSettings settings = new ReversalSettings(); 
 
     class ReversalPass : ScriptableRenderPass
     {
@@ -23,9 +23,12 @@ public class ReversalFeature : ScriptableRendererFeature
 
         int ssdColorId;
         int ssdDepthId;
-
+        /* RenderTargetIdentifier : CommandBuffer에 대한 RenderTexture를 식별함
+         * RenderTexture는 여러 방법으로 식별가능 
+         *
+         * 
+         */
         RenderTargetIdentifier colorTargetIdentifier;
-
         RenderTargetIdentifier cameraColorTexture;
 
         public ReversalPass(string profilerTag)
