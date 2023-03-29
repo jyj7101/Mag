@@ -180,37 +180,37 @@ namespace BoingHack
         }
 
 
-        internal static void ExecuteBones(in List<BoingKit.BoingBones> bonesMap, in UpdateMode updateMode)
-        {
-            Profiler.BeginSample("Update Bones (Execute)");
-
-            float dt = DeltaTime;
-
-            foreach (var bones in bonesMap)
-            {
-                if ((int)bones.UpdateMode != (int)updateMode)
-                    continue;
-
-                bones.PrepareExecute();
-
-                bones.EndAccumulateTargets();
-                switch (bones.UpdateMode)
-                {
-                    case BoingKit.BoingManager.UpdateMode.EarlyUpdate:
-                    case BoingKit.BoingManager.UpdateMode.LateUpdate:
-                        bones.Params.Execute(bones, DeltaTime);
-                        break;
-
-                    case BoingKit.BoingManager.UpdateMode.FixedUpdate:
-                        bones.Params.Execute(bones, Time.fixedDeltaTime);
-                        break;
-                }
-
-                bones.MarkExecuted();
-            }
-
-            Profiler.EndSample();
-        }
+        // internal static void ExecuteBones(in List<BoingKit.BoingBones> bonesMap, in UpdateMode updateMode)
+        // {
+        //     Profiler.BeginSample("Update Bones (Execute)");
+        //
+        //     float dt = DeltaTime;
+        //
+        //     foreach (var bones in bonesMap)
+        //     {
+        //         if ((int)bones.UpdateMode != (int)updateMode)
+        //             continue;
+        //
+        //         bones.PrepareExecute();
+        //
+        //         bones.EndAccumulateTargets();
+        //         switch (bones.UpdateMode)
+        //         {
+        //             case BoingKit.BoingManager.UpdateMode.EarlyUpdate:
+        //             case BoingKit.BoingManager.UpdateMode.LateUpdate:
+        //                 bones.Params.Execute(bones, DeltaTime);
+        //                 break;
+        //
+        //             case BoingKit.BoingManager.UpdateMode.FixedUpdate:
+        //                 bones.Params.Execute(bones, Time.fixedDeltaTime);
+        //                 break;
+        //         }
+        //
+        //         bones.MarkExecuted();
+        //     }
+        //
+        //     Profiler.EndSample();
+        // }
 
 
         private void RestoreBones()
