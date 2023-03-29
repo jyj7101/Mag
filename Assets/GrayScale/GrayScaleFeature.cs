@@ -3,35 +3,35 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-// Å¬·¡½º ¸í : ½¦ÀÌ´õ + ÇÇÃÄ
-public class ReversalFeature : ScriptableRendererFeature
+// í´ë˜ìŠ¤ ëª… : ì‰ì´ë” + í”¼ì³
+public class GrayScaleFeature : ScriptableRendererFeature
 {
 
     [System.Serializable]
-    public class ReversalSettings  // ½¦ÀÌ´õ ¼¼ÆÃ
+    public class GrayScaleSettings  // ì‰ì´ë” ì„¸íŒ…
     {
         public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
         public Material passMaterial = null;
     }
 
-    public ReversalSettings settings = new ReversalSettings(); 
+    public GrayScaleSettings settings = new GrayScaleSettings(); 
 
-    class ReversalPass : ScriptableRenderPass
+    class GrayScalePass : ScriptableRenderPass
     {
         public Material passMaterial;
         string profilerTag;
 
         int ssdColorId;
         int ssdDepthId;
-        /* RenderTargetIdentifier : CommandBuffer¿¡ ´ëÇÑ RenderTexture¸¦ ½Äº°ÇÔ
-         * RenderTexture´Â ¿©·¯ ¹æ¹ıÀ¸·Î ½Äº°°¡´É 
+        /* RenderTargetIdentifier : CommandBufferì— ëŒ€í•œ RenderTextureë¥¼ ì‹ë³„í•¨
+         * RenderTextureëŠ” ì—¬ëŸ¬ ë°©ë²•ìœ¼ë¡œ ì‹ë³„ê°€ëŠ¥ 
          *
          * 
          */
         RenderTargetIdentifier colorTargetIdentifier;
         RenderTargetIdentifier cameraColorTexture;
 
-        public ReversalPass(string profilerTag)
+        public GrayScalePass(string profilerTag)
         {
             this.profilerTag = profilerTag;
         }
@@ -79,11 +79,11 @@ public class ReversalFeature : ScriptableRendererFeature
         }
     }
 
-    private ReversalPass scriptablePass;
+    private GrayScalePass scriptablePass;
 
     public override void Create()
     {
-        scriptablePass = new ReversalPass("Final");
+        scriptablePass = new GrayScalePass("Final");
         scriptablePass.passMaterial = settings.passMaterial;
         scriptablePass.renderPassEvent = settings.renderPassEvent;
     }

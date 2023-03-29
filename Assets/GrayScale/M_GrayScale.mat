@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Invert
+  m_Name: M_GrayScale
   m_Shader: {fileID: 4800000, guid: f8dff4e0af32754488b7273294d29818, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []

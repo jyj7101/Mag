@@ -1,4 +1,4 @@
-Shader "Custom/MaskInvert"
+Shader "Custom/GrayScale"
 {
     Properties
     {
