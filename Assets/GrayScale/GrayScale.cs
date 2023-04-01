@@ -5,11 +5,16 @@ using UnityEngine;
 public class GrayScale : MonoBehaviour
 {
 
-    public Color ChangeColor;
+    public bool grayOn;
 
     void Update()
     {
-        Shader.SetGlobalColor("_ChangeColor", ChangeColor);
+        float gray;
+        if (grayOn)
+            gray = 1;
+        else
+            gray = 0;
+        Shader.SetGlobalFloat("_GrayOn", gray);
     }
 
 }
