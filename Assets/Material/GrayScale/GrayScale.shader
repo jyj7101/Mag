@@ -3,8 +3,7 @@ Shader "Custom/GrayScale"
     Properties
     {
         _MainTex("Texture", 2D) = "white" {}
-        //_MaskTex("Mask texture", 2D) = "white" {}
-        _GrayScale("Grayscale", Range(0.0, 0.75)) = 0.0
+        _GrayScale("Grayscale", Range(0.0, 1)) = 0.0
     }
         SubShader
     {
@@ -19,7 +18,6 @@ Shader "Custom/GrayScale"
 
             #include "UnityCG.cginc"
 
-            float _GrayScale;
             struct appdata
             {
                 float4 vertex : POSITION;
@@ -42,21 +40,17 @@ Shader "Custom/GrayScale"
 
             sampler2D _MainTex;
             sampler2D _MaskTex;
+            float _GrayScale;
 
             fixed4 frag(v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                float gray = (col.r + col.g + col.b) / 3;
-                
-                // fixed4 mask = tex2D(_MaskTex, i.uv);
-                // col = (1 - col) * mask + col * (1 - mask); reverse
+                float gray = (col.r * 0.2989) + (col.g * 0.587) + (col.b * 0.114);
                 
                 col = lerp(col, gray, _GrayScale);
                 return col;
             }
             ENDCG
         }
-        
-        
     }
 }

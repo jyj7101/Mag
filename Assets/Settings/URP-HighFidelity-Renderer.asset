@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   settings:
     passTag: Player
     Event: 500
     filterSettings:
-      RenderQueueType: 1
+      RenderQueueType: 0
       LayerMask:
         serializedVersion: 2
         m_Bits: 8
       PassNames: []
-    overrideMaterial: {fileID: 2100000, guid: 2691a6c715d0e5b468b4863e8fe6a4f0, type: 2}
+    overrideMaterial: {fileID: 2100000, guid: aaac7cb7feb576846941b868fdf75e91, type: 2}
     overrideMaterialPassIndex: 0
-    overrideDepthState: 1
+    overrideDepthState: 0
     depthCompareFunction: 4
     enableWrite: 0
     stencilSettings:
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466c7916ab969e94fb0cad84a6bfe2b4, type: 3}
   m_Name: ReversalFeature
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   settings:
     renderPassEvent: 500
     passMaterial: {fileID: 2100000, guid: cae1a546e8a4d2b46b6f615d7ad59d9a, type: 2}
