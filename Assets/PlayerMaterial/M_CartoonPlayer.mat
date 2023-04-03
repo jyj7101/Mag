@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TestToonMat 1
+  m_Name: M_CartoonPlayer
   m_Shader: {fileID: -6465566751694194690, guid: f56902d86aae325429ba35c2b665a021,
     type: 3}
   m_ValidKeywords: []

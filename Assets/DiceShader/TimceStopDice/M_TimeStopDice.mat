@@ -59,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HealDiceCorss:
-        m_Texture: {fileID: 2800000, guid: c810d6f7d8e7b3d4abafb0ea81f55240, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3bf36b88b47994b43981405d6d94daf4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HealDiceOutLine:
