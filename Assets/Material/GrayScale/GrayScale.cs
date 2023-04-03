@@ -1,20 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GrayScale : MonoBehaviour
 {
+    [Range(0, 1)]
+    public float grayScaleAmount;
 
-    public bool grayOn;
-
-    void Update()
+    [SerializeField]
+    private Material grayScale;
+    private void Update()
     {
-        float gray;
-        if (grayOn)
-            gray = 1;
-        else
-            gray = 0;
-        Shader.SetGlobalFloat("_GrayOn", gray);
+        grayScale.SetFloat("_GrayScale", grayScaleAmount);
+        //Shader.SetGlobalFloat("GrayScale", grayScaleAmount);
     }
-
 }
