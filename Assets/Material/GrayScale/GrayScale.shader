@@ -5,8 +5,12 @@ Shader "Custom/GrayScale"
         _MainTex("Texture", 2D) = "white" {}
         _MaskingTex("MaskingTex", 2D) = "white" {}
 
-        _GrayScale("Grayscale", Range(0.0, 1)) = 0.0
-        _CircleSize("CircleSize", Range(0.0, 100)) = 0
+        _CircleSizeX("CircleSize X", float) = 1
+        _CircleSizeY("CircleSize Y", float) = 1
+
+        _CenterX("Circle center x", float) = 0.5
+        _CenterY("Circle center y", float) = 0.5
+
     }
         SubShader
     {
@@ -42,35 +46,30 @@ Shader "Custom/GrayScale"
             }
 
             sampler2D _MainTex;
-            sampler2D _MaskingTex;
-            float _GrayScale;
-            float _CircleSize;
+        
+            float _CenterX;
+            float _CenterY;
 
-                //float aspectratio = _ScreenParams.x * (_ScreenParams.w - 1);
-                //float dist = saturate(distance(i.uv, float2(0.5, 0.5)) / _CircleSize);
-                
-                //float circle = saturate(1.0 - dist) * _CircleSize;
-                //float circle = round(1.0 - dist);
-                
-                //fixed4 col = tex2D(_MainTex, i.uv);
-                //fixed4 col = tex2D(_MainTex, i.uv) * circle;
-                //float aa = circle * gray;
-                //col = aa;
-
+            float _CircleSizeX;
+            float _CircleSizeY;
+            
             fixed4 frag(v2f i) : SV_Target
             {
                 float4 col = tex2D(_MainTex, i.uv);
-                
                 float gray = (col.r * 0.2989) + (col.g * 0.587) + (col.b * 0.114);
-                float dist = distance(i.uv, float2(0.5, 0.5));
-                float roundDist = round(dist);
 
+                float dist = length(float2(i.uv.x - _CenterX, i.uv.y - _CenterY) * float2(_CircleSizeX * (_ScreenParams.w - 1), _CircleSizeY *(_ScreenParams.z - 1)));
+                //float dist = saturate(distance(i.uv, float2(_CircleCenter.x, _CircleCenter.y)) * _CircleSize);
+                float circle = saturate(dist);
+                //float circle = round(dist);
 
-                col = tex2D(_MainTex, i.uv) + roundDist;
-                
-                return col;
+                float grayCircle = circle + gray;
+
+                float fCircle = grayCircle;
+                return col + circle;
             }
             
+
             ENDCG
         }
     }
