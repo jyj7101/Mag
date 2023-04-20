@@ -102,10 +102,12 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
-    - _CenterX: 960
-    - _CenterY: 540
-    - _CircleSize: 12.2
-    - _CircleSizeX: 0.03
+    - _CenterX: 0.5
+    - _CenterY: 0.5
+    - _CircleRadius: 0.47
+    - _CircleSize: 0
+    - _CircleSizeRatio: 3.5
+    - _CircleSizeX: -0.05
     - _CircleSizeY: 0
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -118,7 +120,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _GrayScale: 1
+    - _GrayScale: 0
     - _Grayscale: 0
     - _Intensity: 2.4
     - _Metallic: 0
