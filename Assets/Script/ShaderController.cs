@@ -6,6 +6,8 @@ using UnityEngine;
 public class ShaderController : MonoBehaviour
 {
     public float height;
+    public MeshVertex vertex;
+    
     
     #region PRIVATE
     private Material mat;
@@ -15,6 +17,7 @@ public class ShaderController : MonoBehaviour
     private void Start()
     {
         mat = GetComponent<Renderer>().material;
+        vertex.position = Vector3.back;
     }
 
     private void Update()

@@ -10,13 +10,13 @@ Shader "Unlit/Heart"
     {
         Tags { "RenderType"="Opaque" }
 
+            Cull Off
         Pass
         {
             CGPROGRAM
             #pragma vertex vert
             #pragma geometry geom
             #pragma fragment frag
-
 
             // make fog work
             #pragma multi_compile_fog
