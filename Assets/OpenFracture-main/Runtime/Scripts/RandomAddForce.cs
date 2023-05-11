@@ -5,9 +5,9 @@ using Random = UnityEngine.Random;
 
 public class RandomAddForce : MonoBehaviour
 {
-    public float xForce = 500;
-    public float yForce = 500;
-    public float zForce = 500;
+    public float xForce = 100;
+    public float yForce = 100;
+    public float zForce = 100;
 
     IEnumerator Start()
     {

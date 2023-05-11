@@ -125,7 +125,7 @@ public class Fracture : MonoBehaviour
         // rigidbody 프로퍼티를 조각들한테 복사
         var thisRigidBody = this.GetComponent<Rigidbody>();
         var fragmentRigidBody = obj.AddComponent<Rigidbody>();
-        fragmentRigidBody.velocity = thisRigidBody.velocity;
+        fragmentRigidBody.velocity = thisRigidBody.velocity;  
         fragmentRigidBody.angularVelocity = thisRigidBody.angularVelocity;
         fragmentRigidBody.drag = thisRigidBody.drag;
         fragmentRigidBody.angularDrag = thisRigidBody.angularDrag;
