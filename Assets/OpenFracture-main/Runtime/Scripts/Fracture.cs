@@ -108,7 +108,7 @@ public class Fracture : MonoBehaviour
         // Update mesh to the new sliced mesh
         obj.AddComponent<MeshFilter>(); 
         
-        obj.AddComponent<RandomAddForce>(); // 조각들이 실행할 스크립트
+        obj.AddComponent<FractureChildren>(); // 조각들이 실행할 스크립트
         
         //머터리얼 추가. 일반 머터리얼은 슬롯 1에, 잘린 단면 머터리얼은 슬롯 2에
         var meshRenderer = obj.AddComponent<MeshRenderer>();
