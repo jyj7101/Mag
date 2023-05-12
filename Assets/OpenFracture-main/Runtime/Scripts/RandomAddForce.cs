@@ -12,7 +12,12 @@ public class RandomAddForce : MonoBehaviour
     IEnumerator Start()
     {
         Rigidbody rigi = GetComponent<Rigidbody>();
-        rigi.AddForce(new Vector3(Random.Range(-xForce, xForce), Random.Range(-yForce, yForce),Random.Range(-zForce, zForce)));
+        if(rigi)
+            rigi.AddForce(new Vector3(Random.Range(-xForce, xForce), Random.Range(-yForce, yForce),Random.Range(-zForce, zForce)));
+        else
+        {
+            yield break;
+        }
         
         yield return new WaitForSeconds(3f);
         Material m = GetComponent<MeshRenderer>().sharedMaterial;

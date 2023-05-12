@@ -14,9 +14,11 @@ public class Fracture : MonoBehaviour
     // 디버깅용
     void Update()
     {
-        
+
         if (Input.GetKeyDown(KeyCode.O))
+        {
             this.ComputeFracture();
+        }
 
     }
 

@@ -99,6 +99,7 @@ public class FragmentData
     /// <param name="mesh">The source mesh data.</param>
     public FragmentData(Mesh mesh)
     {
+        Debug.Log(" model 읽기 쓰기가 켜져있어야함");
         var positions = mesh.vertices;
         var normals = mesh.normals;
         var uv = mesh.uv;
