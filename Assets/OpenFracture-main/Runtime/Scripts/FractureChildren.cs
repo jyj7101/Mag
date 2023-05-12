@@ -5,7 +5,7 @@ using UnityEngine;
 public class FractureChildren : MonoBehaviour
 {
     private static readonly int DissolveAmount = Shader.PropertyToID("_DissolveAmount");
-    public float dissolveTime = 100;
+    public float dissolveTime = 10000;
     public float xForce = 100;
     public float yForce = 100;
     public float zForce = 100;
