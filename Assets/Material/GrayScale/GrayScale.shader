@@ -4,7 +4,7 @@ Shader "Custom/GrayScale"
     {
         _MainTex("Texture", 2D) = "white" {}
 
-        _CircleRadius("CircleRadius", float) = 0
+        _CircleRadius("CircleRadius", Range(0, 1)) = 0
 
         _CenterX("Circle center x", float) = 0.5
         _CenterY("Circle center y", float) = 0.5
@@ -54,12 +54,18 @@ Shader "Custom/GrayScale"
             {
                 float4 col = tex2D(_MainTex, i.uv);
                 float gray = dot(col.rgb, float3(0.2989, 0.587, 0.114));
+                _CircleRadius *= _ScreenParams.x;
+                _CenterX *= _ScreenParams.x;
+                _CenterY *= _ScreenParams.y;
 
-                float dist = distance(i.uv, float2(_CenterX, _CenterY));
+                float uvX = i.uv.x * _ScreenParams.x;
+                float uvY = i.uv.y * _ScreenParams.y;
+                float2 myUv = float2(uvX, uvY);
 
-                float circle = _CircleRadius;
+                float dist = distance(myUv, float2(_CenterX, _CenterY));
+                //float len = length(dist);
 
-                if(dist < circle)
+                if(dist < _CircleRadius)
                     col.rgb = gray;
 
                 return col;

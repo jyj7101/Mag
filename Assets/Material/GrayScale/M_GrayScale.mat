@@ -104,7 +104,7 @@ Material:
     - _BumpScale: 1
     - _CenterX: 0.5
     - _CenterY: 0.5
-    - _CircleRadius: 0.47
+    - _CircleRadius: 0.18
     - _CircleSize: 0
     - _CircleSizeRatio: 3.5
     - _CircleSizeX: -0.05
