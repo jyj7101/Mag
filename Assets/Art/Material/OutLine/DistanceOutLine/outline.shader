@@ -45,16 +45,16 @@ Shader "Unlit/outline"
 				float4 objPos = mul (unity_ObjectToWorld, float4(0,0,0,1));
 
 				float dist = distance(_WorldSpaceCameraPos, objPos.xyz) / _ScreenParams.g;
-				float expand = dist * 0.25 * _Width;
+				float expand = dist * _Width;
 				float4 pos = float4(v.vertex.xyz + v.normal * expand, 1);
-
+				
 				o.pos = UnityObjectToClipPos(pos);
 				return o;
 			}
 
 			float4 frag(VertexOutput i) : COLOR 
 			{
-				return fixed4(_Color.rgb, 0);
+				return _Color;
 			}
 			ENDCG
 		}
