@@ -4,19 +4,19 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
 // 클래스 명 : 쉐이더 + 피쳐
-public class GrayScaleFeature : ScriptableRendererFeature
+public class BlackOutFeature : ScriptableRendererFeature
 {
 
     [System.Serializable]
-    public class GrayScaleSettings  // 쉐이더 세팅
+    public class BlackOutSettings  // 쉐이더 세팅
     {
         public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
         public Material passMaterial = null;
     }
 
-    public GrayScaleSettings settings = new GrayScaleSettings(); 
+    public BlackOutSettings settings = new BlackOutSettings(); 
 
-    class GrayScalePass : ScriptableRenderPass
+    class BlackOutPass : ScriptableRenderPass
     {
         public Material passMaterial;
         string profilerTag;
@@ -31,7 +31,7 @@ public class GrayScaleFeature : ScriptableRendererFeature
         RenderTargetIdentifier colorTargetIdentifier;
         RenderTargetIdentifier cameraColorTexture;
 
-        public GrayScalePass(string profilerTag)
+        public BlackOutPass(string profilerTag)
         {
             this.profilerTag = profilerTag;
         }
@@ -79,11 +79,11 @@ public class GrayScaleFeature : ScriptableRendererFeature
         }
     }
 
-    private GrayScalePass scriptablePass;
+    private BlackOutPass scriptablePass;
 
     public override void Create()
     {
-        scriptablePass = new GrayScalePass("Final");
+        scriptablePass = new BlackOutPass("Black Out");
         scriptablePass.passMaterial = settings.passMaterial;
         scriptablePass.renderPassEvent = settings.renderPassEvent;
     }
