@@ -56,9 +56,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DistortionValue: 1.04
+    - _DistortionValue: 0.08
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed: 1.35
+    - _Speed: 0.91
     m_Colors: []
   m_BuildTextureStacks: []
