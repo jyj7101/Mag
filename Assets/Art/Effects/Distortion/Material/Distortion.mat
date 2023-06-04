@@ -35,7 +35,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _NoiseTex:
-        m_Texture: {fileID: 2800000, guid: 6fcea76059aa63a4f9b4332999919f41, type: 3}
+        m_Texture: {fileID: 2800000, guid: 69bf2b6c4dcf10349a0a4a4402b9ee28, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_8380cf721ff542b4b0fda8d89c616de3_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 4895e8174ccf31241b6b0970b704b313, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_c6524e6c519c4f7e9501a6fb74ddaef7_Texture_1:
@@ -61,8 +65,12 @@ Material:
     m_Ints: []
     m_Floats:
     - _DistortionValue: 0.1
+    - _LengthScale: 0.93
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed: 0.91
+    - _Speed: 2.58
+    - _Start: 5
+    - _StartSize: 5
+    - _WaveSize: -0.26
     m_Colors: []
   m_BuildTextureStacks: []
