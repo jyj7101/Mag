@@ -2657,7 +2657,7 @@ GameObject:
   - component: {fileID: 4237453816978834893}
   - component: {fileID: 2911161930508555342}
   - component: {fileID: 5934879053980821699}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2675,7 +2675,7 @@ GameObject:
   - component: {fileID: 4416255755624536827}
   - component: {fileID: 92745551498581574}
   - component: {fileID: 2392911142718737845}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2701,7 +2701,7 @@ GameObject:
   - component: {fileID: 8651108717359579783}
   - component: {fileID: 5472986679856646586}
   - component: {fileID: 2552553271214029626}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fur02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2719,7 +2719,7 @@ GameObject:
   - component: {fileID: 41469396881285126}
   - component: {fileID: 3351781528068002608}
   - component: {fileID: 1373960804185213813}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fur01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2790,7 +2790,7 @@ GameObject:
   - component: {fileID: 5274050702481050992}
   - component: {fileID: 4541396201995299564}
   - component: {fileID: 308116050119033640}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2957,7 +2957,7 @@ GameObject:
   - component: {fileID: 1566919870493132836}
   - component: {fileID: 2898322648622215170}
   - component: {fileID: 2897435522884076857}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3006,7 +3006,7 @@ GameObject:
   - component: {fileID: 7428546930828537058}
   - component: {fileID: 7990583010157628800}
   - component: {fileID: 1874544853363000528}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3048,7 +3048,7 @@ GameObject:
   - component: {fileID: 1509841831592607632}
   - component: {fileID: 7078612861191998027}
   - component: {fileID: 6159753011730830736}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3079,7 +3079,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8300585868051501789}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MainCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3097,7 +3097,7 @@ GameObject:
   - component: {fileID: 5579401811190923020}
   - component: {fileID: 2614330574123686612}
   - component: {fileID: 6275738350550565392}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
