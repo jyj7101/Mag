@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ear
+  m_Name: Ear 1
   m_Shader: {fileID: -6465566751694194690, guid: f275b22d2074b1a4db20f7922262b13a,
     type: 3}
   m_ValidKeywords: []
@@ -70,7 +70,7 @@ Material:
     - _DstBlend: 0
     - _EmissionInten: 0.94
     - _Intensity: 1.56
-    - _LightPos: 40
+    - _LightPos: 23
     - _PointInten: 5.05
     - _QueueControl: 0
     - _QueueOffset: 0
