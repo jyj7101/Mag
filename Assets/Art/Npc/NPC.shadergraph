@@ -1936,7 +1936,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "2b4e95501a74426589970da24afc833c",
     "m_Id": 0,
-    "m_DisplayName": "AO",
+    "m_DisplayName": "AO_Flat",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -5981,10 +5981,10 @@
     "m_Guid": {
         "m_GuidSerialized": "dc292162-2abe-424f-98b2-eff864e73c3e"
     },
-    "m_Name": "AO",
+    "m_Name": "AO_Flat",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "AO",
-    "m_DefaultReferenceName": "_AO",
+    "m_RefNameGeneratedByDisplayName": "AO_Flat",
+    "m_DefaultReferenceName": "_AO_Flat",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
