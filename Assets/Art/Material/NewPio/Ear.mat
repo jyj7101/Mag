@@ -23,11 +23,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 812393d9eef3d474e82893e935be6365, type: 3}
+        m_Texture: {fileID: 2800000, guid: a0757f2fafcd52b42949e750c28c429c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6fe37d94536b31a42929a165cf8465fd, type: 3}
+        m_Texture: {fileID: 2800000, guid: fe47b9721f1022840861c620cfccacb4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PointLightArea:
+        m_Texture: {fileID: 2800000, guid: a0757f2fafcd52b42949e750c28c429c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_162b8168c3f84a44873369551704defb_Texture_1:
@@ -71,22 +75,24 @@ Material:
     - _EmissionInten: 0.94
     - _Intensity: 1.56
     - _LightPos: 40
-    - _PointInten: 5.05
+    - _MultiSpeed: 1
+    - _PointInten: 14.46
+    - _PointLightSpeed: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ScaleFactor: 1
-    - _Speed: 2
+    - _Speed: 0.5
     - _SrcBlend: 1
     - _Surface: 0
     - _ZTest: 4
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - Color_99F9ED08: {r: 0.1376634, g: 0.13136348, b: 0.2264151, a: 0}
+    - Color_99F9ED08: {r: 0.23792806, g: 0.22908507, b: 0.33962262, a: 0}
     - Color_ABD0D7B1: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
     - Color_DF55D64F: {r: 8, g: 8, b: 8, a: 0}
     - Color_FB0ECDA7: {r: 1, g: 1, b: 1, a: 0}
-    - _EmissionColor: {r: 1, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 0.24750803, g: 0.27446952, b: 0.509434, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5508271445520539012
 MonoBehaviour:
