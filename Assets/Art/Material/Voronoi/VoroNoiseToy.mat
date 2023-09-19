@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2845352693551871421
+--- !u!114 &-1609483590461182268
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Voro
-  m_Shader: {fileID: -6465566751694194690, guid: 52ce7db4175f4204cbf0b2bf3d0fde57,
+  m_Name: VoroNoiseToy
+  m_Shader: {fileID: -6465566751694194690, guid: 7dc22cdece50b9f49a28a8677f823fc8,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -48,11 +48,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Float: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed: 0.4
-    - _amount: 0.4
-    m_Colors:
-    - _Color: {r: 0, g: 0.73833895, b: 1, a: 0}
-    - _Color_1: {r: 0, g: 0.07363937, b: 1, a: 0}
+    m_Colors: []
   m_BuildTextureStacks: []
