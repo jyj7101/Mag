@@ -66,7 +66,7 @@ Material:
     m_Floats:
     - Vector1_7A26C0DF: 32
     - Vector1_8CA290E3: 0.1
-    - Vector1_A208836A: 0.7
+    - Vector1_A208836A: 0.692
     - _AlphaClip: 0
     - _Blend: 0
     - _CastShadows: 1
@@ -76,7 +76,7 @@ Material:
     - _Intensity: 1.56
     - _LightPos: 40
     - _MultiSpeed: 1
-    - _PointInten: 14.46
+    - _PointInten: 52.3
     - _PointLightSpeed: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0
