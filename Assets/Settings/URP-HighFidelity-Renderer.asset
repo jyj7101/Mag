@@ -94,22 +94,6 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
---- !u!114 &-4569496115639258945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e75ed3396a719b14986a31c284f6bc46, type: 3}
-  m_Name: LabFeature
-  m_EditorClassIdentifier: 
-  m_Active: 0
-  settings:
-    renderPassEvent: 500
-    passMaterial: {fileID: 2100000, guid: 4d92d029dbf14a1498e7f97ad73d6390, type: 2}
 --- !u!114 &-3463620296924472379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,8 +255,8 @@ MonoBehaviour:
   - {fileID: -8464396633189966257}
   - {fileID: -3463620296924472379}
   - {fileID: -3286825462959871096}
-  - {fileID: -4569496115639258945}
-  m_RendererFeatureMap: e805d94b300ae16944aed4e1c33ad53408a7871bae10f08e8a0555319ec4c26bf9d596201ae192ddd9706b77560c81d8cf29e52d60bb6c80e36271eae00c4e2d58b467ae214ce8574f1eb3c01b6c888ac5dbfbe4b0bfeecf886b91e1a7d962d2bf70cb387ee395c0
+  - {fileID: 1186773361329414051}
+  m_RendererFeatureMap: e805d94b300ae16944aed4e1c33ad53408a7871bae10f08e8a0555319ec4c26bf9d596201ae192ddd9706b77560c81d8cf29e52d60bb6c80e36271eae00c4e2d58b467ae214ce8574f1eb3c01b6c888ac5dbfbe4b0bfeecf886b91e1a7d962d2a39fef9615447810
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -312,6 +296,33 @@ MonoBehaviour:
   m_ClusteredRendering: 0
   m_TileSize: 32
   m_IntermediateTextureMode: 1
+--- !u!114 &1186773361329414051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dfe19a5a3627643b277cc718a85551, type: 3}
+  m_Name: Blit
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    Event: 400
+    blitMaterial: {fileID: 2100000, guid: 4d92d029dbf14a1498e7f97ad73d6390, type: 2}
+    blitMaterialPassIndex: 0
+    setInverseViewMatrix: 0
+    requireDepthNormals: 0
+    srcType: 0
+    srcTextureId: _CameraColorTexture
+    srcTextureObject: {fileID: 0}
+    dstType: 0
+    dstTextureId: _BlitPassTexture
+    dstTextureObject: {fileID: 0}
+    overrideGraphicsFormat: 0
+    graphicsFormat: 4
 --- !u!114 &3264560940035695331
 MonoBehaviour:
   m_ObjectHideFlags: 0
