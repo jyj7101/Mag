@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61dfe19a5a3627643b277cc718a85551, type: 3}
-  m_Name: Blit
+  m_Name: RandomDiceScreenEffect
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
