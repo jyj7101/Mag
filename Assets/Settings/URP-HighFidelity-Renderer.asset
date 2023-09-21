@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dfe19a5a3627643b277cc718a85551, type: 3}
   m_Name: RandomDiceScreenEffect
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     Event: 400
     blitMaterial: {fileID: 2100000, guid: 4d92d029dbf14a1498e7f97ad73d6390, type: 2}
