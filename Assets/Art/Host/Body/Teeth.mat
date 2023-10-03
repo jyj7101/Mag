@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Host
+  m_Name: Teeth
   m_Shader: {fileID: -6465566751694194690, guid: b3d628071fcf7e04abffd240e0bf7a8e,
     type: 3}
   m_ValidKeywords: []
@@ -51,15 +51,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AO_Flat: 1
+    - _AO_Flat: 0
     - _Emission: 1.5
     - _Metallic: 2.4
-    - _Normal: 1.5
+    - _Normal: 1.35
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RimAmount: 0.869
     - _RimThres: 0.05
-    - _Shadow: 2.71
+    - _Shadow: 4.17
     m_Colors:
     - _AmbientColor: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0.7607844, g: 0.8313726, b: 1, a: 0}

@@ -22,9 +22,9 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _AlphaStrength: 0.268
-    - _Intensity: 15
-    - _Width: 2.87
+    - _AlphaStrength: 0.324
+    - _Intensity: 16.95
+    - _Width: 4.76
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
