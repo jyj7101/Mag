@@ -157,8 +157,8 @@ MonoBehaviour:
   _boidsLayer:
     serializedVersion: 2
     m_Bits: 1
-  _detectRange: 59.8
-  _separationRange: 65.4
+  _detectRange: 36.9
+  _separationRange: 43
   _spawnCount: 300
   _spawnAreaPosX:
     _min: -50
@@ -171,6 +171,7 @@ MonoBehaviour:
     _max: 50
   maxPos: {x: 60, y: 60, z: 60}
   minPos: {x: -60, y: -60, z: -60}
+  currentState: 0
 --- !u!4 &203849352
 Transform:
   m_ObjectHideFlags: 0
