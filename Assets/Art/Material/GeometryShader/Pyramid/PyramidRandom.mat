@@ -90,9 +90,9 @@ Material:
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _ExtrudeMaxValue: 2.15
-    - _ExtrudeRandomValue: 0.24
+    - _ExtrudeRandomValue: 0
     - _ExtrudeSpeed: 0.73
-    - _ExtrudeValue: 0.23
+    - _ExtrudeValue: 0.426
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
