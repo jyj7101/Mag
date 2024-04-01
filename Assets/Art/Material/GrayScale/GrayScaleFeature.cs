@@ -3,12 +3,12 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-// 클래스 명 : 쉐이더 + 피쳐
+
 public class GrayScaleFeature : ScriptableRendererFeature
 {
 
     [System.Serializable]
-    public class GrayScaleSettings  // 쉐이더 세팅
+    public class GrayScaleSettings  
     {
         public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
         public Material passMaterial = null;
@@ -23,11 +23,7 @@ public class GrayScaleFeature : ScriptableRendererFeature
 
         int ssdColorId;
         int ssdDepthId;
-        /* RenderTargetIdentifier : CommandBuffer에 대한 RenderTexture를 식별함
-         * RenderTexture는 여러 방법으로 식별가능 
-         *
-         * 
-         */
+
         RenderTargetIdentifier colorTargetIdentifier;
         RenderTargetIdentifier cameraColorTexture;
 
@@ -83,7 +79,7 @@ public class GrayScaleFeature : ScriptableRendererFeature
 
     public override void Create()
     {
-        scriptablePass = new GrayScalePass("Final");
+        scriptablePass = new GrayScalePass("GrayScale");
         scriptablePass.passMaterial = settings.passMaterial;
         scriptablePass.renderPassEvent = settings.renderPassEvent;
     }

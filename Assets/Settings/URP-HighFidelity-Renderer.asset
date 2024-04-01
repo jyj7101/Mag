@@ -257,7 +257,8 @@ MonoBehaviour:
   - {fileID: -3286825462959871096}
   - {fileID: 1186773361329414051}
   - {fileID: 8709100730764616993}
-  m_RendererFeatureMap: e805d94b300ae16944aed4e1c33ad53408a7871bae10f08e8a0555319ec4c26bf9d596201ae192ddd9706b77560c81d8cf29e52d60bb6c80e36271eae00c4e2d58b467ae214ce8574f1eb3c01b6c888ac5dbfbe4b0bfeecf886b91e1a7d962d2a39fef961544781021e551caf8f0dc78
+  - {fileID: 4782863433725883627}
+  m_RendererFeatureMap: e805d94b300ae16944aed4e1c33ad53408a7871bae10f08e8a0555319ec4c26bf9d596201ae192ddd9706b77560c81d8cf29e52d60bb6c80e36271eae00c4e2d58b467ae214ce8574f1eb3c01b6c888ac5dbfbe4b0bfeecf886b91e1a7d962d2a39fef961544781021e551caf8f0dc78ebb46fc8f3246042
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -379,6 +380,45 @@ MonoBehaviour:
   settings:
     renderPassEvent: 500
     passMaterial: {fileID: 2100000, guid: cae1a546e8a4d2b46b6f615d7ad59d9a, type: 2}
+--- !u!114 &4782863433725883627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: Glitch
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    passTag: RenderObjects
+    Event: 300
+    filterSettings:
+      RenderQueueType: 0
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 0
+      PassNames: []
+    overrideMaterial: {fileID: 0}
+    overrideMaterialPassIndex: 0
+    overrideDepthState: 0
+    depthCompareFunction: 4
+    enableWrite: 1
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 8
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
 --- !u!114 &6334396583440266328
 MonoBehaviour:
   m_ObjectHideFlags: 0
